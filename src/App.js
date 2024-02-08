@@ -54,7 +54,7 @@ export default function App() {
           </S.Social>
         </S.HeaderContainer>
       </S.Header>
-      <S.Main>
+      <S.Main background={home.background.url}>
         <S.MainContainer>
           <S.MovieContainer>
             <S.Movie>

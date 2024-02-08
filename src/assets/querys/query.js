@@ -30,6 +30,10 @@ query {
     }
     trailerLink
     watchMovieLink
+    background {
+      id
+      url
+    }
   }
 }
 `;

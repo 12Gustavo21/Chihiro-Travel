@@ -9,12 +9,12 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     *::selection {
-        background-color: #BDECB6;
+        background-color: #f1a5b1;
         color: #878787;
     }
     
     body {
-        background: linear-gradient(149deg, #628E75 0%, #1A4855 100%) center center no-repeat fixed;
+        background: linear-gradient(149deg, #0b0a0a 0%, #2d1607 100%) center center no-repeat fixed;
         overflow: hidden;
     }
 `;
