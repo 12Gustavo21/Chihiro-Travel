@@ -27,7 +27,8 @@ export const SlideAnimationRight = keyframes`
 export const Header = styled.header`
   width: 100%;
   height: 20vh;
-  position: fixed;
+  position: absolute;
+  top: 0;
   z-index: 1;
   user-select: none;
 
@@ -65,10 +66,15 @@ export const LogoBox = styled.figure`
 
   @media only screen and (width <= 900px) {
     width: 50%;
+
     img {
       width: 70%;
       height: 70%;
     }
+  }
+
+  @media only screen and (width <= 675px) {
+    justify-content: center;
   }
 `;
 
@@ -88,6 +94,10 @@ export const Social = styled.div`
 
   @media only screen and (width <= 425px) {
     gap: 1.3rem;
+  }
+
+  @media only screen and (width <= 675px) {
+    display: none;
   }
 `;
 
@@ -132,7 +142,7 @@ export const SocialLink = styled.a`
 
 export const Main = styled.main`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: url(${(props) => props.background}) no-repeat center center/cover;
   display: grid;
   place-items: end;
@@ -148,6 +158,7 @@ export const MainContainer = styled.section`
   @media only screen and (width <= 900px) {
     flex-direction: column-reverse;
     align-items: flex-start;
+    height: 100%;
   }
 `;
 
@@ -160,6 +171,11 @@ export const MovieContainer = styled.div`
   flex-direction: column;
 
   @media only screen and (width <= 900px) {
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  @media only screen and (width <= 675px) {
     width: 100%;
   }
 `;
@@ -173,7 +189,17 @@ export const Movie = styled.div`
   align-items: flex-start;
 
   @media only screen and (width <= 900px) {
-    width: 90%;
+    width: 85%;
+    height: 35%;
+  }
+
+  @media only screen and (width <= 768px) {
+    height: 45%;
+  }
+
+  @media only screen and (width <= 675px) {
+    width: 95%;
+    height: 60%;
   }
 `;
 
@@ -261,10 +287,6 @@ export const MovieButtons = styled.div`
       background: transparent;
       border: 0.2rem solid #f1a5b1;
     }
-
-    @media only screen and (width <= 900px) {
-      
-    }
   }
 
   a button:hover {
@@ -292,9 +314,28 @@ export const MovieButtons = styled.div`
   }
 
   @media only screen and (width <= 900px) {
-    width: 90%;
+    width: 85%;
     height: 20%;
-    gap: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (width <= 675px) {
+    width: 95%;
+    align-items: flex-start;
+
+    a {
+      width: 95%;
+    }
   }
 
   @media only screen and (width <= 500px) {
@@ -315,7 +356,7 @@ export const MovieButton = styled.button`
   overflow: hidden;
 
   p {
-    font: 700 1rem/1.3125rem "Roboto", sans-serif;
+    font: 800 1rem/1.3125rem "Roboto", sans-serif;
     color: #0b0a0a;
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
@@ -354,23 +395,15 @@ export const MovieButton = styled.button`
     width: 12rem;
     height: 2.5rem;
   }
-
-  @media only screen and (width <= 900px) {
-    width: 11rem;
-    p,
-    img {
-      font: 500 0.875rem/1.5rem "Andada Pro", sans-serif;
-    }
-  }
 `;
 
 export const Floating = keyframes`
     0% {
-        transform: translateY(0);
+        transform: translateY(1rem);
     }
 
     100% {
-        transform: translateY(-2rem);
+        transform: translateY(-.5rem);
     }
 `;
 
@@ -393,64 +426,11 @@ export const NoFaces = styled.figure`
 
   @media only screen and (width <= 900px) {
     width: 100%;
-    height: 70%;
+    height: 50%;
     margin-bottom: 0;
   }
 
   @media only screen and (width <= 500px) {
     height: 100%;
-  }
-`;
-
-export const Footer = styled.footer`
-  width: 100%;
-  height: 10vh;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 10rem;
-  font: 400 1rem/1.5rem "Andada Pro", sans-serif;
-  animation: ${SlideAnimationLeft} 2s ease-in-out;
-
-  p,
-  a {
-    color: #f3f5f7;
-    text-decoration: none;
-    position: absolute;
-  }
-
-  a::after {
-    position: relative;
-    display: block;
-    content: "";
-    border-bottom: #f3f5f7 0.125rem solid;
-    border-radius: 0.125rem;
-    transform: scaleX(0.1);
-    transform-origin: center;
-    transition: transform 300ms ease-in-out;
-  }
-
-  a:hover::after {
-    transform: scaleX(1);
-  }
-
-  a:hover {
-    cursor: url("https://www.cursor.cc/cursor/734/78/cursor.png"), auto !important;
-  }
-
-  @media only screen and (width <= 1260px) {
-    padding-left: 5rem;
-  }
-
-  @media only screen and (width <= 900px) {
-    height: 15vh;
-    padding: 1rem 0 0.5rem 2.5rem;
-    align-items: flex-end;
-  }
-
-  @media only screen and (width <= 768px) {
-    padding-left: 1rem;
   }
 `;
